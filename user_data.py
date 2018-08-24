@@ -3,16 +3,18 @@ class User:
     This is a class that generates new instances of usernames and password
     '''
     user_list = []
-    def __init__ (self, username, password):
+    def __init__ (self, username, password, website):
         '''
         __init__ methods that helps in defining the object properties
         Args:
         username: New user username
         password: New user password
+        website: New user website
         '''
 
         self.username = username
         self.password = password
+        self.website = website
 
     def save_user(self):
         '''
@@ -25,5 +27,24 @@ class User:
         delete_user method that deletes a user from the user_list
         '''
         User.user_list.remove(self)
+
+    @classmethod
+    def find_by_username(cls, username):
+        for users in cls.user_list:
+            if user.username == username:
+                return username
+
+    @classmethod
+    def user_exist(cls, username):
+        for user in cls.user_list:
+            if user.username == username:
+                return True
+
+        return False
+
+    @classmethod
+    def display_user(cls):
+        return clas.user_list
+
 
 

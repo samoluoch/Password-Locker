@@ -4,11 +4,12 @@ from user_data import User
 class TestUser(unittest.TestCase):
     def setUp(self):
 
-        self.new_user = User("samsoluoch", "wordpass")
+        self.new_user = User("samsoluoch", "wordpass", "twitter")
     
     def test_init(self):
         self.assertEqual(self.new_user.username, "samsoluoch")
         self.assertEqual(self.new_user.password, "wordpass")
+        self.assertEqual(self.new_user.website, "twitter")
 
 
     def tearDown(self):
@@ -34,7 +35,7 @@ class TestUser(unittest.TestCase):
         save_multiple_user to test the ability to save multiple users
         '''
         self.new_user.save_user()
-        test_user = User ("test", "thispassword")
+        test_user = User ("test", "thispassword", "twitter")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
 
@@ -46,7 +47,7 @@ class TestUser(unittest.TestCase):
         delete_user method that uses the remove method from the user_list
         '''
         self.new_user.save_user()
-        test_user = User ("test", "thispassword")
+        test_user = User ("test", "thispassword", "twitter")
         test_user.save_user()
 
         self.new_user.delete_user()
@@ -59,7 +60,7 @@ class TestUser(unittest.TestCase):
         test to check if it is possible to find users by usernames and display the usernames
         '''
         self.new_user.save_user()
-        test_user = User ("test", "thispassword")
+        test_user = User ("test", "thispassword", "twitter")
         test_user.save_user()
 
         found_user = User.find_by_username("test")
