@@ -16,6 +16,6 @@ class User:
 
     def save_user_list(self):
         '''
-        save_user_data method that saves objects into user_list
+        save_user_list method that saves objects into user_list
         '''
         User.user_list.append(self)
