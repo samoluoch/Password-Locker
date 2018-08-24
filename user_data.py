@@ -18,4 +18,4 @@ class User:
         '''
         save_user_data method that saves objects into user_list
         '''
-        user.user_list.append(self)
+        User.user_list.append(self)
