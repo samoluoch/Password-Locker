@@ -69,7 +69,7 @@ class TestUser(unittest.TestCase):
 
 
 #fifth test
-#testing a user's existence
+#testing a user's object existence
     def test_user_exists(self):
         '''
         methods that tests if a user exists in the user_list
@@ -82,6 +82,15 @@ class TestUser(unittest.TestCase):
         user_exists = User.user_exist("test")
 
         self.assertTrue(user_exists)
+
+
+# sixth test
+# receiving a list of users
+    def test_display_all_users(self):
+        '''
+        method that displays the list of users
+        '''
+        self.assertEqual(User.display_user(), User.user_list)
 
 
 
