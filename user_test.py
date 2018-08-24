@@ -12,10 +12,26 @@ class TestUser(unittest.TestCase):
 
 # first test
 # save_user_list
-    def save_user_list(self):
-        self.new_user.save_user_list()
+    def save_user(self):
+        '''
+        save_user method that appends a new_user to the user_list
+        '''
+        self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
 
+
+#second test
+ # delete user
+    def delete_user(self):
+        '''
+        delete_user method that uses the remove method from the user_list
+        '''
+        self.new_user.save_user()
+        test_user = User ("test", "thispassword")
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)
 
 
 
