@@ -60,13 +60,28 @@ class TestUser(unittest.TestCase):
         test to check if it is possible to find users by usernames and display the usernames
         '''
         self.new_user.save_user()
-        test_user = User ("test", "thispassword", "twitter")
+        test_user = User("test", "thispassword", "twitter")
         test_user.save_user()
 
         found_user = User.find_by_username("test")
 
         self.assertEqual(found_user.username, test_user.username)
 
+
+#fifth test
+#testing a user's existence
+    def test_user_exists(self):
+        '''
+        methods that tests if a user exists in the user_list
+        '''
+
+        self.new_user.save_user()
+        test_user = User("test", "thispassword", "twitter")
+        test_user.save_user()
+
+        user_exists = User.user_exist("test")
+
+        self.assertTrue(user_exists)
 
 
 

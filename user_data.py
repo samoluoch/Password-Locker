@@ -30,7 +30,7 @@ class User:
 
     @classmethod
     def find_by_username(cls, username):
-        for users in cls.user_list:
+        for user in cls.user_list:
             if user.username == username:
                 return username
 
@@ -44,7 +44,7 @@ class User:
 
     @classmethod
     def display_user(cls):
-        return clas.user_list
+        return cls.user_list
 
 
 
