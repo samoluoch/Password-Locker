@@ -1,7 +1,7 @@
 # import pyperclip
 class User:
     '''
-    This is a class that generates new instances of usernames and password
+    This is a class that generates new instances of user details
     '''
     user_list = []
     def __init__ (self, username, phone, email):
@@ -9,8 +9,8 @@ class User:
         __init__ methods that helps in defining the object properties
         Args:
         username: New user username
-        password: New user password
-        website: New user website
+        phone: New user phone
+        email: New user email
         '''
 
         self.username = username
