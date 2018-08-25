@@ -28,3 +28,21 @@ class TestCredential(unittest.TestCase):
 
 
 # test 2
+    def test_delete_credential(self):
+        '''
+        delete_credential method that removes a credential object from the credential_list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("samsoluoch", "pass1", "twitter")
+        test_credential.save_credential()
+
+        self.new_credential.delete_credential()
+        self.assertEqual(len(Credential.credential_list), 1)
+
+
+# test 3
+
+
+
+if __name__ == '__main__':
+    unittest.main()
