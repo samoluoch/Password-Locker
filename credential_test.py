@@ -16,4 +16,15 @@ class TestCredential(unittest.TestCase):
         tearDown() method that cleans up after every run
         '''
         Credential.credential_list = []
-        
+
+# test 1
+#save_credential
+    def test_save_credential(self):
+        '''
+        save_credential method for saving the new credential object by appending it to the credential_list
+        '''
+        self.new_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list), 1)
+
+
+# test 2
