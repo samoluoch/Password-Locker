@@ -53,6 +53,18 @@ class TestCredential(unittest.TestCase):
 
 
 # test 3
+# finding credential using website
+    def test_find_by_website(self):
+        '''
+        test for finding credentials using website whose credentials are in the object.
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("samsoluoch", "pass1", "twitter")
+        test_credential.save_credential()
+
+        found_credential = Credential.find_by_website("twitter")
+        
+        self.assertEqual(found_credential.website, test_credential.website)
 
 
 
