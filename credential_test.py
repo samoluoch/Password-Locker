@@ -28,6 +28,18 @@ class TestCredential(unittest.TestCase):
 
 
 # test 2
+# save_multiple_credentials
+    def test_save_multiple_credentials(self):
+        '''
+        save_multiple_credentials test method that tests if we can save multiple credentials
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential("samsoluoch", "pass1", "twitter")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list), 2)
+
+# test 3
+# delete_credential
     def test_delete_credential(self):
         '''
         delete_credential method that removes a credential object from the credential_list
