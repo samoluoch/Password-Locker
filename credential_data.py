@@ -40,3 +40,7 @@ class Credential:
                 return True
 
         return False
+
+    @classmethod
+    def display_credential(cls):
+        return cls.credential_list

@@ -69,7 +69,7 @@ class TestCredential(unittest.TestCase):
 
 # test 4
 # testing existence of a credential
-    def credential_exists(self):
+    def test_credential_exists(self):
         '''
         test method that checks if a credential exists
         '''
@@ -80,7 +80,13 @@ class TestCredential(unittest.TestCase):
         credential_exists = Credential.credential_exists("twitter")
         self.assertTrue(credential_exists)
 
-
+# test 5
+# receining a list of credentials
+    def test_display_credential(self):
+        '''
+        test method that checks if we can display a list of all the credentials
+        '''
+        self.assertTrue(Credential.display_credential(), Credential.credential_list)
 
 
 
