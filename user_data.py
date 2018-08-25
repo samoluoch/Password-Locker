@@ -47,10 +47,7 @@ class User:
     def display_user(cls):
         return cls.user_list
 
-    @classmethod
-    def copy_email(cls, username):
-        user_found = User.find_by_username(username)
-        pyperclicp.copy(user_found.username)
+
 
 
 

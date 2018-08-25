@@ -96,18 +96,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(User.display_user(), User.user_list)
 
 
-# seventh test
-# testing the copy-pasting ability
-    @classmethod
-    def copy_username(self):
-        '''
-        test method for testing the copy-pasting ability
-        '''
-
-        self.new_user.save_user()
-        User.copy_username("test")
-        self.assertEqual(self.new_user.username, pyperclip.paste())
-
 
 
 if __name__ == '__main__':
