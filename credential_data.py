@@ -26,3 +26,9 @@ class Credential:
         delete_credential function that deletes a credential data from credential_list
         '''
         Credential.credential_list.remove(self)
+
+    @classmethod
+    def find_by_website(cls, website):
+        for credential in cls.credential_list:
+            if credential.website == website:
+                return website
