@@ -1,7 +1,6 @@
 import unittest
 from user_data import User
-# import pyperclip,sys
-# import sys
+import pyperclip
 
 class TestUser(unittest.TestCase):
     def setUp(self):
@@ -108,8 +107,6 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         User.copy_username("test")
         self.assertEqual(self.new_user.username, pyperclip.paste())
-
-
 
 
 
