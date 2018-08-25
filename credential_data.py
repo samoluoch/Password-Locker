@@ -32,3 +32,11 @@ class Credential:
         for credential in cls.credential_list:
             if credential.website == website:
                 return website
+
+    @classmethod
+    def credential_exists(cls, website):
+        for credential in cls.credential_list:
+            if credential.website == website:
+                return True
+
+        return False
