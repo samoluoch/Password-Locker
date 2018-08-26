@@ -57,3 +57,17 @@ def main():
             print('\n')
 
         elif code == 'du':
+            if display_user():
+                print("This is the list of available users")
+                print('\n')
+                 for user in user_list():
+                     print(f"{user.user_name} {user.phone_number} {user.email}")
+
+                     print('\n')
+
+            else:
+                print('\n')
+                print("Currently, you have no users in your list")
+                print('\n')
+
+            elif code ==
