@@ -1,4 +1,3 @@
-import pyperclip
 import sys
 class User:
     '''

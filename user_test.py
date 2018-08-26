@@ -1,6 +1,5 @@
 import unittest
 from user_data import User
-import pyperclip
 
 class TestUser(unittest.TestCase):
     def setUp(self):

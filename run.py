@@ -1,10 +1,19 @@
-#!/usr/bin/env python3.6
+
 from user_data import User
 from credential_data import Credential
 
-def create_user(user_name, phone_number, email):
-    new_user = User(user_name, phone_number, email)
+def create_user(username, phone, email):
+    new_user = User(username, phone, email)
     return new_user
+
+
+def create_credential(username, password, website):
+    new_credential = Credential(username, password, website)
+    return new_credential
+
+
+def save_credential(credential):
+    credential.save_credential()
     
 
 def save_user(user):
@@ -28,13 +37,14 @@ def display_user():
 
 def main():
     print("Welcome to Password Locker. Please enter your username to proceed")
-    user_name = input()
+    username = input()
 
-    print(f"Thank you {user_name}. Use the following options to proceed:")
+
+    print(f'Thank you {username} Please use the following options to proceed')
     print('\n')
 
     while True:
-        print("Enter code cu to create a new user, du to display users, fu to find users, and ex to exit")
+        print("Enter code cu to create a new user, du to display users, fu to find users, cc to create new credential and ex to exit")
 
         code = input().lower()
 
@@ -43,25 +53,51 @@ def main():
             print("-"*10)
 
             print("Username...")
-            user_name = input()
+            username = input()
 
             print("Phone number...")
-            phone_number = input()
+            phone = input()
 
             print("User email...")
             email = input()
 
-            save_user(create_user(user_name, phone_number, email))
+            save_user(create_user(username, phone, email))
             print('\n')
-            print(f"New User {user_name} {phone_number} {email} created")
+            print(f"New User {username} {phone} {email} created")
             print('\n')
+
+
+#credntial
+        elif code == 'cc':
+            print("New credential")
+            print("-"*10)
+
+            print("Username...")
+            username = input()
+
+            print("Password...")
+            password = input()
+
+            print("Website...")
+            website = input()
+
+
+            save_credential(create_credential(username, password, website))
+            print('\n')
+            print(f"New Credential {username} {website} created")
+            print('\n')
+#
+
+
+
 
         elif code == 'du':
             if display_user():
                 print("This is the list of available users")
                 print('\n')
+
                 for user in user_list():
-                     print(f"{user.user_name} {user.phone_number} {user.email}")
+                     print(f"{user.username} {user.phone} {user.email}")
 
                      print('\n')
 
@@ -74,15 +110,18 @@ def main():
                 print("Enter the username you want to such")
                 user_name = input()
                 if find_by_username(user_name):
-                     search_username = find_by_username(user_name)
-                     print(f"{search_username.user_name} {search_username.phone_number} {search_username.email}")
+                     search_username = find_by_username(username)
+                     print(f"{search_username.username} {search_username.phone} {search_username.email}")
                      print('-'*20)
 
-                     print(f"phone number....{search_username.phone_number}")
+                     print(f"phone number....{search_username.phone}")
                      print(f"email.....{search_username.email}")
 
                 else:
-                    print("Thay user is not in your lis")
+                    print("Thay user is not in your list")
 
         elif code == 'ex':
                 print("Have a nice time")
+
+if __name__ == '__main__':
+    main()
