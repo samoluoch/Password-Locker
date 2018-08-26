@@ -67,7 +67,6 @@ def main():
             print('\n')
 
 
-#credntial
         elif code == 'cc':
             print("New credential")
             print("-"*10)
@@ -84,11 +83,8 @@ def main():
 
             save_credential(create_credential(username, password, website))
             print('\n')
-            print(f"New Credential {username} {website} created")
+            print(f"New username {username} and password {password} for application {website} created")
             print('\n')
-#
-
-
 
 
         elif code == 'du':
