@@ -92,7 +92,7 @@ def main():
                 print("This is the list of available users")
                 print('\n')
 
-                for user in user_list():
+                for user in User.user_list:
                      print(f"{user.username} {user.phone} {user.email}")
 
                      print('\n')
